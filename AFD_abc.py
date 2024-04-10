@@ -58,12 +58,12 @@ nombre_archivo = 'automata.png'
 dot.render(nombre_archivo, format='png', cleanup=True)
 
 # Simular el autómata
-cadenas = ['abc', 'aabc', 'bac', 'a', 'ab']
-for cadena in cadenas:
-    if automata.validar_cadena(cadena):
-        print(f'La cadena "{cadena}" es aceptada.')
-    else:
-        print(f'La cadena "{cadena}" es rechazada.')
+cadena = input("Ingrese una cadena para validar con el autómata: ")
 
+# Validar la cadena con el autómata
+if automata.validar_cadena(cadena):
+    print(f'La cadena "{cadena}" es aceptada.')
+else:
+    print(f'La cadena "{cadena}" es rechazada.')
 # Mostrar el grafo en la consola
 print(dot.source)
