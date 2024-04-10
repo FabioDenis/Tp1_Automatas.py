@@ -27,19 +27,19 @@ estados_aceptacion = {'q2', 'q3', 'q4'}
 transiciones = {
     ('q0', 'a'): ['q1'],
     ('q0', 'b'): ['q0'],
-    ('q0', 'c'): ['q2', 'q4'],  # Transición no determinista a q2 y q4
+    ('q0', 'c'): ['q2', 'q4'],  
     ('q1', 'a'): ['q1'],
     ('q1', 'b'): ['q2'],
-    ('q1', 'c'): ['q4'],         # Transición a q4
+    ('q1', 'c'): ['q4'],         
     ('q2', 'a'): ['q3'],
-    ('q2', 'b'): ['q4'],         # Transición a q4
-    ('q2', 'c'): ['q4'],         # Transición a q4
+    ('q2', 'b'): ['q4'],         
+    ('q2', 'c'): ['q4'],         
     ('q3', 'a'): ['q3'],
-    ('q3', 'b'): ['q4'],         # Transición a q4
-    ('q3', 'c'): ['q4'],         # Transición a q4
-    ('q4', 'a'): ['q1', 'q3'],   # Transición no determinista a q1 y q3
-    ('q4', 'b'): ['q4'],         # Transición a q4
-    ('q4', 'c'): ['q4']          # Transición a q4
+    ('q3', 'b'): ['q4'],         
+    ('q3', 'c'): ['q4'],         
+    ('q4', 'a'): ['q1', 'q3'],   
+    ('q4', 'b'): ['q4'],         
+    ('q4', 'c'): ['q4']         
 }
 
 automata = AutomataFinitoNoDeterminista(estados, alfabeto, estado_inicial, estados_aceptacion, transiciones)

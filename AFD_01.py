@@ -54,7 +54,7 @@ nombre_archivo = 'automata.png'
 dot.render(nombre_archivo, format='png', cleanup=True)
 
 # Simular el autómata
-cadenas = ['1010101010101',]
+cadenas = ['110',]
 for cadena in cadenas:
     if automata.validar_cadena(cadena):
         print(f'La cadena "{cadena}" es aceptada.')
