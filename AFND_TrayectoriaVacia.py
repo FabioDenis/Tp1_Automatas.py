@@ -25,11 +25,11 @@ class AutomataNoDeterministaConTransicionesVacias:
         for estado in estados:
             transicion_vacia = self.transiciones_vacias.get(estado)
             if transicion_vacia:
-                for estado_vacio in transicion_vacia:
+                for estado_vacio in transicion_vacia:#Itera sobre cada estado alcanzable por la transición vacía.
                     if estado_vacio not in clausura:
                         clausura.add(estado_vacio)
                         clausura.update(self.clausura_epsilon({estado_vacio}))
-        return clausura
+        return clausura #Devuelve la clausura epsilon resultante.
 
 # Definir el autómata
 estados = {'q0', 'q1', 'q2', 'q3'}

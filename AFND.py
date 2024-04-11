@@ -11,11 +11,11 @@ class AutomataFinitoNoDeterminista:
     def validar_cadena(self, cadena):
         estados_actuales = [self.estado_inicial]
         for simbolo in cadena:
-            nuevos_estados = []
+            nuevos_estados = [] #almacenar los nuevos estados después de procesar el símbolo actual.
             for estado_actual in estados_actuales:
                 transicion = self.transiciones.get((estado_actual, simbolo))
                 if transicion:
-                    nuevos_estados.extend(transicion)
+                    nuevos_estados.extend(transicion) #Agrega los estados alcanzables por la transición a la lista.
             estados_actuales = nuevos_estados
         return any(estado in self.estados_aceptacion for estado in estados_actuales)
 

@@ -11,7 +11,7 @@ class AutomataFinitoDeterminista:
     def validar_cadena(self, cadena):
         estado_actual = self.estado_inicial
         for simbolo in cadena:
-            estado_actual = self.transiciones.get((estado_actual, simbolo))
+            estado_actual = self.transiciones.get((estado_actual, simbolo))#Actualiza el estado actual del autómata.
             if estado_actual is None:
                 return False
         return estado_actual in self.estados_aceptacion
@@ -45,6 +45,7 @@ for estado in estados:
         dot.attr('node', shape='circle')
     dot.node(estado)
 
+#Recorre las transiciones del autómata y agrega una arista al grafo entre el estado de origen y el estado de destino
 for transicion, destino in transiciones.items():
     origen, simbolo = transicion
     dot.edge(origen, destino, label=simbolo)
